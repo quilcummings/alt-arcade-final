@@ -8,6 +8,8 @@ public class RayCast : MonoBehaviour
     private float step; 
     public bool caught = false;
 
+    private GameObject cow;
+
     void Awake()
     {
         Instance = this;
@@ -29,12 +31,16 @@ public class RayCast : MonoBehaviour
         {
             Debug.Log("Hit");
             caught = true;
+
+            cow = hit.collider.gameObject;
+
+        
         }
 
         if (caught)
         {
             step = 5 * Time.deltaTime;
-            hit.collider.gameObject.transform.position = Vector2.MoveTowards(hit.collider.gameObject.transform.position, transform.position, step);
+            cow.transform.position = Vector2.MoveTowards(cow.transform.position, transform.position, step);
         }
     }
 }
