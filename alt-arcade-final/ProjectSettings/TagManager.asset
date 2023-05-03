@@ -6,6 +6,7 @@ TagManager:
   tags:
   - UFO
   - Cow
+  - Truck
   layers:
   - Default
   - TransparentFX

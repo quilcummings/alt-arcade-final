@@ -19,10 +19,14 @@ public class Movement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
-            rb.AddForce(transform.right * -1 * speed);
+            if (transform.position.x > 5)
+            {
+                rb.AddForce(transform.right * -1 * speed);
             
-            rotationVector.z = -15;
-            transform.rotation = Quaternion.Euler(rotationVector);
+                rotationVector.z = -15;
+                transform.rotation = Quaternion.Euler(rotationVector);
+            }
+            
         }
         else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
